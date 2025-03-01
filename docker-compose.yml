@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres
+    container_name: hearth-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+      POSTGRES_USER: ${POSTGRES_USERNAME}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - hearth-postgres:/var/lib/postgresql/data
+    networks:
+      - hearth-network
+
+  mongo:
+    image: mongo
+    container_name: hearth-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - "${MONGO_PORT}:27017"
+    volumes:
+      - hearth-mongo:/data/db
+    networks:
+      - hearth-network
+
+networks:
+  hearth-network:
+    driver: bridge
+
+volumes:
+  hearth-postgres:
+  hearth-mongo:

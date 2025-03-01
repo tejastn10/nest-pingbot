@@ -1,0 +1,17 @@
+# ESLint configurations
+semi: true
+tabWidth: 2
+singleQuote: false
+arrowParens: "always"
+proseWrap: "always"
+useTabs: true
+bracketSpacing: true
+# Additional Prettier configurations synced with ESLint
+printWidth: 100 # Specify the maximum line length
+quoteProps: "as-needed" # Only add quotes around object literal property names when necessary
+endOfLine: "auto" # Maintain line endings as is, depending on the operating system
+trailingComma: "es5" # Add trailing commas wherever valid in ES5
+overrides:
+  - files: "*.yml"
+    options:
+      singleQuote: false # Don't use single quotes for YAML files

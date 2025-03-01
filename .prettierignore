@@ -1,0 +1,7 @@
+node_modules
+.next
+*.local
+.eslintcache
+*.md
+*.less
+*.css
