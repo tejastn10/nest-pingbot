@@ -1,7 +1,7 @@
 {
 	"name": "nest-pingbot",
 	"version": "0.0.1",
-	"description": "A NestJS messaging module for Slack and Discord notifications",
+	"description": "A NestJS messaging module for Slack and Discord notifications, built with a focus on simplicity and ease of use.",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"scripts": {
