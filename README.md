@@ -2,7 +2,7 @@
   <img src="logo.svg" alt="Logo">
 </p>
 
-# Nest Pingbot 🔥
+# Nest Pingbot 🔔
 
 ![Node.js Version](https://img.shields.io/badge/Node.js-20%2B-339933?logo=nodedotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5%2B-007ACC?logo=typescript&logoColor=white)
