@@ -1,0 +1,34 @@
+name: Security Audit
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - edited
+      - opened
+      - synchronize
+
+jobs:
+  security_audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Security Audit
+        run: |
+          npm audit --audit-level=low
+          if [ $? -ne 0 ]; then
+            echo "Security audit failed"
+            exit 1
+          fi
