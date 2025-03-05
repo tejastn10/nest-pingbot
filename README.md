@@ -8,6 +8,9 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5%2B-007ACC?logo=typescript&logoColor=white)
 ![NestJS](https://img.shields.io/badge/NestJS-10%2B-E0234E?logo=nestjs&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow?logo=open-source-initiative&logoColor=white)
+[![NPM Version](https://img.shields.io/npm/v/nest-pingbot?logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/nest-pingbot)
+[![Unit Tests](https://github.com/tejastn10/nest-pingbot/actions/workflows/unit-test.yml/badge.svg)](https://github.com/tejastn10/nest-pingbot/actions/workflows/unit-test.yml)
+[![Publish NPM Package](https://github.com/tejastn10/nest-pingbot/actions/workflows/publish.yml/badge.svg)](https://github.com/tejastn10/nest-pingbot/actions/workflows/publish.yml)
 
 **Nest Pingbot** is a flexible NestJS module for integrating Slack and Discord messaging capabilities into your applications. Send notifications, alerts, and messages to your team's communication channels directly from your NestJS application.
 
