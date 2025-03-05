@@ -10,8 +10,7 @@
 		"lint": "eslint \"{src,libs}/**/*.ts\" --fix",
 		"test": "jest",
 		"test:watch": "jest --watch",
-		"test:cov": "jest --coverage",
-		"test:e2e": "jest --config ./test/jest-e2e.json",
+		"test:cov": "jest --coverage --collectCoverageFrom='src/**/*.{ts,tsx}'",
 		"prepublishOnly": "npm run build"
 	},
 	"lint-staged": {
@@ -41,12 +40,13 @@
 		"@nestjs/cli": "^11.0.5",
 		"@nestjs/common": "^11.0.11",
 		"@nestjs/core": "^11.0.11",
+		"@nestjs/schedule": "^5.0.1",
 		"@nestjs/schematics": "^11.0.2",
 		"@nestjs/testing": "^11.0.11",
 		"@types/jest": "^29.5.14",
-		"@types/node": "^22.13.8",
-		"@typescript-eslint/eslint-plugin": "^8.25.0",
-		"@typescript-eslint/parser": "^8.25.0",
+		"@types/node": "^22.13.9",
+		"@typescript-eslint/eslint-plugin": "^8.26.0",
+		"@typescript-eslint/parser": "^8.26.0",
 		"eslint": "^9.21.0",
 		"eslint-config-prettier": "^10.0.2",
 		"eslint-plugin-prettier": "^5.2.3",
@@ -59,7 +59,7 @@
 		"ts-loader": "^9.5.2",
 		"ts-node": "^10.9.2",
 		"tsconfig-paths": "^4.2.0",
-		"typescript": "^5.7.3"
+		"typescript": "^5.8.2"
 	},
 	"peerDependencies": {
 		"@nestjs/common": "^10.0.0 || ^11.0.0",
@@ -73,7 +73,6 @@
 			"json",
 			"ts"
 		],
-		"rootDir": "test",
 		"testRegex": ".*\\.spec\\.ts$",
 		"transform": {
 			"^.+\\.(t|j)s$": "ts-jest"
@@ -82,7 +81,8 @@
 			"**/*.(t|j)s"
 		],
 		"coverageDirectory": "../coverage",
-		"testEnvironment": "node"
+		"testEnvironment": "node",
+		"forceExit": true
 	},
 	"keywords": [
 		"nestjs",
