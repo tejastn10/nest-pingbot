@@ -237,6 +237,11 @@ export class MessagingService implements OnModuleInit {
 				params.blocks = options.blocks;
 			}
 
+			if (options.attachments) {
+				// @ts-expect-error - Not sure why but the type is defined properly
+				params.attachments = options.attachments;
+			}
+
 			if (options.threadTs) {
 				params.thread_ts = options.threadTs;
 			}
@@ -260,6 +265,9 @@ export class MessagingService implements OnModuleInit {
 				text: options.text,
 				blocks: options.blocks,
 				channel: options.channel,
+				attachments: options.attachments,
+				unfurl_links: options.unfurlLinks,
+				unfurl_media: options.unfurlMedia,
 			});
 		} else {
 			throw new Error("No Slack client initialized");
