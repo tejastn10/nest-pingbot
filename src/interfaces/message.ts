@@ -1,4 +1,4 @@
-import { AnyBlock, Block, KnownBlock } from "@slack/web-api";
+import { AnyBlock, Block, KnownBlock, MessageAttachment } from "@slack/web-api";
 
 import { EmbedData } from "discord.js";
 
@@ -10,6 +10,8 @@ interface SlackMessageOptions {
 	blocks?: (KnownBlock | Block)[];
 
 	threadTs?: string;
+
+	attachments?: MessageAttachment[];
 
 	unfurlLinks?: boolean;
 	unfurlMedia?: boolean;
@@ -49,6 +51,7 @@ export {
 	AnyBlock,
 	KnownBlock,
 	EmbedData,
+	MessageAttachment,
 	// ? Message options
 	MessageOptions,
 	SlackMessageOptions,
