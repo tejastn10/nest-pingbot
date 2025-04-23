@@ -1,0 +1,9 @@
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+if [[ "$BRANCH" == "main" ]]; then
+  # Allow main branch
+  exit 0
+elif [[ ! $BRANCH =~ ^(feature|bugfix|improvement)/.+ ]]; then
+  echo "Error: Branch name must start with feature/, bugfix/, or improvement/"
+  echo "Your current branch name is: $BRANCH"
+  exit 1
+fi
