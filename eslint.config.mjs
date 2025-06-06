@@ -52,15 +52,8 @@ const eslintConfig = [
 			semi: "error",
 			quotes: ["error", "double"],
 
-			indent: [
-				"error",
-				"tab",
-				{
-					SwitchCase: 1,
-					VariableDeclarator: 1,
-					ignoredNodes: ["PropertyDefinition[decorators.length > 0]"],
-				},
-			],
+			// ? Disabled as Prettier handles these
+			indent: "off",
 
 			"@typescript-eslint/explicit-function-return-type": "error",
 			"@typescript-eslint/no-implicit-any": "off",
