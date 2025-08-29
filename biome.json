@@ -1,0 +1,84 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noForEach": "off"
+			},
+			"style": {
+				"noNonNullAssertion": "off",
+				"useImportType": "error",
+				"useExportType": "error",
+				"useNodejsImportProtocol": "error"
+			},
+			"correctness": {
+				"noUnusedVariables": "error",
+				"useExhaustiveDependencies": "off"
+			},
+			"suspicious": {
+				"noImplicitAnyLet": "error",
+				"noExplicitAny": "off"
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineEnding": "lf",
+		"lineWidth": 100,
+		"attributePosition": "auto"
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "es5",
+			"semicolons": "always",
+			"arrowParentheses": "always",
+			"bracketSpacing": true,
+			"bracketSameLine": false,
+			"quoteStyle": "double",
+			"attributePosition": "auto"
+		},
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		}
+	},
+	"json": {
+		"formatter": {
+			"trailingCommas": "none"
+		}
+	},
+	"files": {
+		"includes": ["src/**/*.{ts,tsx,js,jsx}", "*.ts", "*.js", "*.json"]
+	},
+	"overrides": [
+		{
+			"includes": ["*.ts", "*.tsx"],
+			"linter": {
+				"rules": {
+					"style": {
+						"useImportType": "error"
+					},
+					"correctness": {
+						"noUnusedVariables": "error"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["*.test.ts", "*.spec.ts"],
+			"linter": {
+				"rules": {
+					"suspicious": {
+						"noExplicitAny": "off"
+					}
+				}
+			}
+		}
+	]
+}
