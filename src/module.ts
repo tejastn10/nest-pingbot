@@ -1,14 +1,13 @@
-import { DynamicModule, Module, Provider } from "@nestjs/common";
+/** biome-ignore-all lint/complexity/noStaticOnlyClass: <Need this for backward compatibility> */
+import { type DynamicModule, Module, type Provider } from "@nestjs/common";
 
 import { ScheduleModule } from "@nestjs/schedule";
-
-import { MessagingService } from "./service";
-
-import {
+import type {
 	MessagingModuleAsyncOptions,
 	MessagingModuleOptions,
 	MessagingOptionsFactory,
 } from "./interfaces";
+import { MessagingService } from "./service";
 
 /**
  * MessagingModule provides a flexible configuration system for messaging services
@@ -69,7 +68,7 @@ export class MessagingModule {
 		return {
 			module: MessagingModule,
 			imports: options.imports || [],
-			providers: [...this.createAsyncProviders(options), MessagingService],
+			providers: [...MessagingModule.createAsyncProviders(options), MessagingService],
 			exports: [MessagingService],
 		};
 	}
@@ -109,7 +108,7 @@ export class MessagingModule {
 			module: MessagingModule,
 			global: true,
 			imports: options.imports || [],
-			providers: [...this.createAsyncProviders(options), MessagingService],
+			providers: [...MessagingModule.createAsyncProviders(options), MessagingService],
 			exports: [MessagingService],
 		};
 	}
@@ -127,11 +126,11 @@ export class MessagingModule {
 	 */
 	private static createAsyncProviders(options: MessagingModuleAsyncOptions): Provider[] {
 		if (options.useExisting || options.useFactory) {
-			return [this.createAsyncOptionsProvider(options)];
+			return [MessagingModule.createAsyncOptionsProvider(options)];
 		}
 
 		return [
-			this.createAsyncOptionsProvider(options),
+			MessagingModule.createAsyncOptionsProvider(options),
 			{
 				provide: options.useClass,
 				useClass: options.useClass,

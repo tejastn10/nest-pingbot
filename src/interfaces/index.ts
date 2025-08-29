@@ -1,5 +1,4 @@
-export * from "./platforms";
+export * from "./message";
 
 export * from "./module";
-
-export * from "./message";
+export * from "./platforms";

@@ -1,29 +1,25 @@
-import { Inject, Injectable, Logger, OnModuleInit } from "@nestjs/common";
+import { Inject, Injectable, Logger, type OnModuleInit } from "@nestjs/common";
 
-import { SchedulerRegistry } from "@nestjs/schedule";
-
-import { CronJob } from "cron";
-
+import type { SchedulerRegistry } from "@nestjs/schedule";
 import {
-	ChatPostMessageArguments,
-	ChatPostMessageResponse,
-	ChatScheduleMessageArguments,
+	type ChatPostMessageArguments,
+	type ChatPostMessageResponse,
+	type ChatScheduleMessageArguments,
 	WebClient,
 } from "@slack/web-api";
-import { IncomingWebhook, IncomingWebhookResult } from "@slack/webhook";
+import { IncomingWebhook, type IncomingWebhookResult } from "@slack/webhook";
+import { CronJob } from "cron";
 
-import { Client, GatewayIntentBits, TextChannel, MessageCreateOptions } from "discord.js";
+import { Client, GatewayIntentBits, type MessageCreateOptions, type TextChannel } from "discord.js";
 
-import {
-	// ? Module options
-	MessagingModuleOptions,
-
+import type {
+	DiscordMessageOptions,
 	// ? Message options
 	MessageOptions,
-
+	// ? Module options
+	MessagingModuleOptions,
 	// ? Platform configs
 	SlackMessageOptions,
-	DiscordMessageOptions,
 } from "./interfaces";
 
 @Injectable()
@@ -246,15 +242,15 @@ export class MessagingService implements OnModuleInit {
 				params.thread_ts = options.threadTs;
 			}
 
-			if (Object.prototype.hasOwnProperty.call(options, "unfurlLinks")) {
+			if (Object.hasOwn(options, "unfurlLinks")) {
 				params.unfurl_links = options.unfurlLinks;
 			}
 
-			if (Object.prototype.hasOwnProperty.call(options, "unfurlMedia")) {
+			if (Object.hasOwn(options, "unfurlMedia")) {
 				params.unfurl_media = options.unfurlMedia;
 			}
 
-			if (Object.prototype.hasOwnProperty.call(options, "mrkdwn")) {
+			if (Object.hasOwn(options, "mrkdwn")) {
 				params.mrkdwn = options.mrkdwn;
 			}
 
