@@ -1,16 +1,16 @@
-import { Inject, Injectable, Logger, type OnModuleInit } from "@nestjs/common";
+import { Inject, Injectable, Logger, OnModuleInit } from "@nestjs/common";
 
-import type { SchedulerRegistry } from "@nestjs/schedule";
+import { SchedulerRegistry } from "@nestjs/schedule";
 import {
-	type ChatPostMessageArguments,
-	type ChatPostMessageResponse,
-	type ChatScheduleMessageArguments,
+	ChatPostMessageArguments,
+	ChatPostMessageResponse,
+	ChatScheduleMessageArguments,
 	WebClient,
 } from "@slack/web-api";
-import { IncomingWebhook, type IncomingWebhookResult } from "@slack/webhook";
+import { IncomingWebhook, IncomingWebhookResult } from "@slack/webhook";
 import { CronJob } from "cron";
 
-import { Client, GatewayIntentBits, type MessageCreateOptions, type TextChannel } from "discord.js";
+import { Client, GatewayIntentBits, MessageCreateOptions, TextChannel } from "discord.js";
 
 import type {
 	DiscordMessageOptions,

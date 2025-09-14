@@ -1,8 +1,8 @@
 /** biome-ignore-all lint/complexity/noStaticOnlyClass: <Need this for backward compatibility> */
-import { type DynamicModule, Module, type Provider } from "@nestjs/common";
+import { DynamicModule, Module, Provider } from "@nestjs/common";
 
 import { ScheduleModule } from "@nestjs/schedule";
-import type {
+import {
 	MessagingModuleAsyncOptions,
 	MessagingModuleOptions,
 	MessagingOptionsFactory,

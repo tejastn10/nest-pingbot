@@ -1,11 +1,6 @@
-import type {
-	InjectionToken,
-	ModuleMetadata,
-	OptionalFactoryDependency,
-	Type,
-} from "@nestjs/common";
+import { InjectionToken, ModuleMetadata, OptionalFactoryDependency, Type } from "@nestjs/common";
 
-import type { PlatformConfigs } from "./platforms";
+import { PlatformConfigs } from "./platforms";
 
 export interface MessagingModuleOptions {
 	platforms: PlatformConfigs;

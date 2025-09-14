@@ -1,10 +1,10 @@
 import { SchedulerRegistry } from "@nestjs/schedule";
-import { Test, type TestingModule } from "@nestjs/testing";
+import { Test, TestingModule } from "@nestjs/testing";
 
-import type { WebClient } from "@slack/web-api";
-import type { IncomingWebhook } from "@slack/webhook";
+import { WebClient } from "@slack/web-api";
+import { IncomingWebhook } from "@slack/webhook";
 
-import type { Client } from "discord.js";
+import { Client } from "discord.js";
 
 import { MessagingService } from "../src/service";
 
