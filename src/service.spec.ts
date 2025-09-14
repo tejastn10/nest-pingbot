@@ -1,6 +1,5 @@
-import { Test, TestingModule } from "@nestjs/testing";
-
 import { SchedulerRegistry } from "@nestjs/schedule";
+import { Test, TestingModule } from "@nestjs/testing";
 
 import { WebClient } from "@slack/web-api";
 import { IncomingWebhook } from "@slack/webhook";
@@ -100,7 +99,9 @@ describe("MessagingService", () => {
 
 	describe("sendMessage", () => {
 		it("should send Slack message using WebClient", async () => {
-			(mockSlackWebClient.chat.postMessage as jest.Mock).mockResolvedValue({ ts: "1234" });
+			(mockSlackWebClient.chat.postMessage as jest.Mock).mockResolvedValue({
+				ts: "1234",
+			});
 
 			const result = await service.sendMessage({
 				slack: {
@@ -182,7 +183,9 @@ describe("MessagingService", () => {
 
 	describe("Platform-Specific Features", () => {
 		it("should support Slack thread messages", async () => {
-			(mockSlackWebClient.chat.postMessage as jest.Mock).mockResolvedValue({ ts: "1234" });
+			(mockSlackWebClient.chat.postMessage as jest.Mock).mockResolvedValue({
+				ts: "1234",
+			});
 
 			await service.sendMessage({
 				slack: {

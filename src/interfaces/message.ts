@@ -53,8 +53,8 @@ export {
 	EmbedData,
 	MessageAttachment,
 	// ? Message options
-	MessageOptions,
-	SlackMessageOptions,
-	DiscordMessageOptions,
-	ScheduleOptions,
+	type MessageOptions,
+	type SlackMessageOptions,
+	type DiscordMessageOptions,
+	type ScheduleOptions,
 };
